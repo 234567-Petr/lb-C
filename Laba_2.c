@@ -3,7 +3,7 @@
 
 
 
-double countIntegral(double a, double b, int n);
+double integral(double a, double b, int n);
 
 
 int main() {
@@ -19,22 +19,22 @@ int main() {
     printf("Введите погрешность E: ");
     scanf("%lf", &E);
 
-    double previousResult = 0.0;
-    double result = countIntegral(a, b, n);
+    double Factor = 0.0;
+    double risultat = integral(a, b, n);
 
    
-    while (fabs(result - previousResult) > E) {
-        previousResult = result;
+    while (fabs(risultat - Factor) > E) {
+        Factor = risultat;
         n *= 2;
-        result = countIntegral(a, b, n);
+        risultat = integral(a, b, n);
     }
 
-    printf("Значение интеграла: %f\n", result);
+    printf("Значение интеграла: %f\n", risultat);
 
     return 0;
 }
 
-double countIntegral(double a, double b, int n) {
+double integral(double a, double b, int n) {
     double sum = 0.0;
     double dx = (b - a) / n; 
 
